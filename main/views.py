@@ -15,7 +15,7 @@ def home(request):
 
         source = urllib.urlopen(
             'http://api.openweathermap.org/data/2.5/weather?q='
-                    + city + '&appid=91168c975eda228ac6bb39ac3d6e5211').read()
+                    + city + '&appid= Use Yor API Here').read()
         
         # converting JSON data to a dictionary
         list_of_data = json.loads(source)
