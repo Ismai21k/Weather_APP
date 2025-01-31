@@ -74,13 +74,14 @@
 
   <!-- Weather Info -->
   <div class="container mt-4">
-    {% if country_code and coordinate and temp and pressure and humidity %}
+    {% if country_code and coordinate and temp and pressure and humidity and city %}
     <div class="col-md-6 mx-auto weather-card text-center">
       <h3>📍 Country Code: <strong>{{ country_code }}</strong></h3>
       <p>🌍 Coordinates: <strong>{{ coordinate }}</strong></p>
       <p>🌡️ Temperature: <strong>{{ temp }}°C</strong></p>
       <p>🎈 Pressure: <strong>{{ pressure }} hPa</strong></p>
       <p>💧 Humidity: <strong>{{ humidity }}%</strong></p>
+      <p>     CITY  :  <strong>{{ city }}</strong></p>
     </div>
     {% endif %}
   </div>
