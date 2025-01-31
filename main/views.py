@@ -15,7 +15,7 @@ def home(request):
 
         source = urllib.urlopen(
             'http://api.openweathermap.org/data/2.5/weather?q='
-                    + city + '&appid= Use Yor API Here').read()
+                    + city + '&appid=91168c975eda228ac6bb39ac3d6e5211').read()
         
         # converting JSON data to a dictionary
         list_of_data = json.loads(source)
@@ -23,20 +23,21 @@ def home(request):
         # data for variable list_of_data
         data = {
            "country_code": str(list_of_data['sys']['country']), 
-            "coordinate": str(list_of_data['coord']['lon'])  + '  '
-                        + str(list_of_data['coord']['lat']), 
+            "coordinate": str(list_of_data['coord']['lon']) + '  ' + str(list_of_data['coord']['lat']),
             "temp": str(list_of_data['main']['temp']) , 
             "pressure": str(list_of_data['main']['pressure'])  , 
             "humidity": str(list_of_data['main']['humidity'])  , 
-        
+            "city": city,
+
         }
         print(data)
-
+        
 
         return render(request, 'main/index.html', data)
-    
+        
     else:
         data = {}
         return render(request, "main/index.html", data)
-        
+    
+    
   
